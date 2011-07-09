@@ -1,5 +1,7 @@
 Wunderlist Helpers
 
-wunderlist-print.js is a bookmarklet that allows to put all tasks from all lists on one page. Then page with all tasks may be saved pr printed for backup purposes.
+wunderlist-print.js is a script that allows to put all tasks from all lists on one page. Then page with all tasks may be saved pr printed for backup purposes.
 
+Code for bookmarklet:
 
+javascript:(function(){ISRIL_H='a915';ISRIL_SCRIPT=document.createElement('SCRIPT');ISRIL_SCRIPT.type='text/javascript';ISRIL_SCRIPT.src='https://raw.github.com/brainunit/Wunderlist-Helpers/master/wunder-print.js';document.getElementsByTagName('head')[0].appendChild(ISRIL_SCRIPT)})();
