@@ -55,6 +55,7 @@ $('body').empty();
 $('body').attr('style', 'font-family: Georgia,serif;line-height: 1;font-size: 1.1em;');
 $('body').append('<div style="margin:10px"><a href="javascript:window.print()">Print this page</a></div>');
 
+var listAddr = document.location.protocol === 'https:' ? 'https://www.wunderlist.com/ajax/lists/id/' : 'http://www.wunderlist.com/ajax/lists/id/';
 
 for (var i = 0; i < lists.length; ++i)
 {
@@ -64,7 +65,7 @@ for (var i = 0; i < lists.length; ++i)
 	console.log(id);
 
 	$.ajax({
-		url: 'https://www.wunderlist.com/ajax/lists/id/' + id,
+		url: listAddr + id,
 		success: onLoaded,
 		error: onError
 	});
