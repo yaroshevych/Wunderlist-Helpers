@@ -9,7 +9,9 @@ var onLoaded = function(data)
 	var id='list-data-' + ++divId;
 
 	$('body').append('<div id="' + id + '" style="margin:10px"></div>');
-	$('#'+id).append(JSON.parse(data).data);
+	$('#' + id).append(JSON.parse(data).data);
+
+	$('#' + id + ' h1').css('font-size', '1.2em');
 
 	$('.timestamp').each(function(){
 		var ticks = $(this).attr('rel');
@@ -34,6 +36,10 @@ var onLoaded = function(data)
 	$('h3').remove();
 	//$('showdate').remove();
 	$('.more').css('padding', '5px');
+	$('li').removeAttr('id');
+	$('ul').removeAttr('id');
+	$('*').removeAttr('class');
+	$('*').removeAttr('rel');
 };
 
 var onError = function(data)
@@ -42,10 +48,12 @@ var onError = function(data)
 
 var lists = $('#lists a[class~=list]');
 
+$('style').remove();
+$('link[type="text/css"]').remove();
 $('body').empty();
-$('body').attr('style', 'background:white;color:black;overflow:auto;font-size:14px;height:auto;margin:0');
 
-$('html').attr('style', 'background:white');
+$('body').attr('style', 'font-family: Georgia,serif;line-height: 1;font-size: 1.1em;');
+$('body').append('<div style="margin:10px"><a href="javascript:window.print()">Print this page</a></div>');
 
 
 for (var i = 0; i < lists.length; ++i)
